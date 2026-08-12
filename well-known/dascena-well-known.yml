@@ -1,0 +1,64 @@
+generated: '2026-08-11'
+method: probed
+source: https://dascena.com/.well-known/
+host: https://dascena.com
+resolvable: false
+dns:
+  status: SERVFAIL
+  resolvers_tried:
+    - system
+    - 8.8.8.8
+    - 1.1.1.1
+  delegated_nameservers:
+    - NS-193.AWSDNS-24.COM
+    - NS-876.AWSDNS-45.NET
+    - NS-1166.AWSDNS-17.ORG
+    - NS-1648.AWSDNS-14.CO.UK
+  note: >-
+    The domain registration is still live at GoDaddy (registry expiry 2026-10-18) and still
+    delegates to four Route 53 nameservers, but the hosted zone behind them is gone, so every
+    public resolver returns SERVFAIL. No HTTP request to dascena.com can complete; the status
+    column below is 000 (connection never established), not an HTTP status.
+documents:
+  - path: /.well-known/security.txt
+    status: 000
+  - path: /.well-known/openid-configuration
+    status: 000
+  - path: /.well-known/oauth-authorization-server
+    status: 000
+  - path: /.well-known/api-catalog
+    status: 000
+  - path: /.well-known/ai-plugin.json
+    status: 000
+  - path: /.well-known/agent-card.json
+    status: 000
+  - path: /.well-known/agent.json
+    status: 000
+successor_probe:
+  host: https://cirrusdx.com
+  note: >-
+    CirrusDx acquired Dascena Labs LLC (the Houston/Texas laboratory business) effective
+    2022-08-05 and the Dascena company identity now trades as "DBA CirrusDx". The successor
+    host resolves and serves a 200, but publishes no developer surface of its own. Recorded
+    here for provenance only — these are CirrusDx probes and are NOT attributed to Dascena.
+  documents:
+    - path: /
+      status: 200
+    - path: /.well-known/security.txt
+      status: 404
+    - path: /.well-known/agent-card.json
+      status: 404
+    - path: /openapi.json
+      status: 404
+    - path: /llms.txt
+      status: 404
+    - path: /developers
+      status: 404
+    - path: /api
+      status: 404
+x-evidence:
+  fetched: '2026-08-11'
+  note: >-
+    No pointer is emitted into apis.yml for this file. Nothing returned 200 on a Dascena host,
+    so there is no WellKnown, SecurityTxt or AgentCard surface to assert. This artifact records
+    a verified absence, not a presence.
