@@ -54,7 +54,7 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/dascena_stock/
+  url: https://dascena.com
 x-enrichment:
   date: '2026-08-11'
   status: minimal
